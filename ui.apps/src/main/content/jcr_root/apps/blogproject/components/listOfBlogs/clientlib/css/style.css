@@ -1,0 +1,30 @@
+.listOfBlogs{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding:0 10px;
+    flex-wrap: wrap;
+}
+.cardImage{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.middlePart{
+    margin:30px 10px 0px 10px;;
+}
+.lastPart{
+    margin: 0px 0px 10px 10px;
+}
+.card{
+    border: 1px solid black;
+    width: 30%;
+    border-radius: 15px;
+    margin-top:20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.02);
+}

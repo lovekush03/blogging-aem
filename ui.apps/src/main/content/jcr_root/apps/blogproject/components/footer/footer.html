@@ -1,0 +1,13 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='blogpage.footer'}"/>
+<footer data-sly-use.footer="com.blogproject.core.models.FooterModel">
+    <div class="upper-footer">
+        <a href="#header">Back to top</a>
+    </div>
+    <div class="lower-footer">
+        <ul data-sly-list.navItem="${footer.navItems}">
+            <li><a href="${navItem.link @ context = 'uri'}">${navItem.title}</a></li>
+        </ul>
+        <p>@2022-23 TTN Bootcamp All rights reserved</p>
+    </div>
+</footer>

@@ -1,0 +1,30 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='blogpage.publishBlogListing'}"/>
+
+<sly data-sly-use.model="com.blogproject.core.models.PublishBlogModel">
+    <sly data-sly-test="${model}">
+        <main data-sly-list.blog="${model.blogList}">
+            <sly data-sly-test="${model.blogList}">
+                <section class="card">
+                    <div class="text">
+                        <div class="text-top">
+                            <h1>${blog.title}</h1>
+                            <p>${blog.date}</p>
+                            <p>${blog.description}</p>
+                        </div>
+
+                        <div class="text-bottom">
+                            <a href="${blog.path}" class="blue position">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <img src="${blog.thumbnail}" alt="blog image">
+                    </div>
+                </section>
+            </sly>
+        </main>
+    </sly>
+    <sly data-sly-test="${model.blogList.size==0}">
+        <div>No Blogs Available for This Month</div>
+    </sly>
+</sly>

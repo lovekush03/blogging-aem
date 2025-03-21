@@ -1,0 +1,25 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='blogpage.header'}"/>
+
+
+<header id="header" data-sly-use.model="com.blogproject.core.models.HeaderModel">
+    <div class="logo">
+        <img src="${model.logoImage @ context='uri'}" alt="Alternate Image">
+        <h2>${model.logoText}</h2>
+    </div>
+    <div class="menu"><span>&#9776;</span></div>
+
+    <div data-sly-test="${!model.navItems.isEmpty}">
+        <ul class="navbar" data-sly-list.navItem="${model.navItems}">
+            <sly data-sly-test="${navItem.hideNavProperty=='Default'}">
+                <li><a href="${navItem.link @ context='uri'}" >${navItem.title}</a></li>
+            </sly>
+        </ul>
+    </div>
+
+    <div data-sly-test="${model.navItems.isEmpty}">
+        <p>No navigation items available.</p>
+    </div>
+
+
+</header>

@@ -1,0 +1,13 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.banner img {
+    /*width: 80%;*/
+    /*height: auto;*/
+    border-radius: 15px;
+    width:750px;
+    height:430px;
+}

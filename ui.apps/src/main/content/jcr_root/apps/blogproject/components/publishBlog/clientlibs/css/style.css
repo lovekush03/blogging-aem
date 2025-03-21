@@ -1,0 +1,30 @@
+main{
+    padding:10px;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    margin:25px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+.text{
+    padding:15px;
+    width:100%;
+}
+.text p{
+    padding-bottom:10px;
+}
+.image{
+    overflow: hidden;
+    width:50%;
+}
+.image img{
+    height: 100%;
+    width:100%;
+}
