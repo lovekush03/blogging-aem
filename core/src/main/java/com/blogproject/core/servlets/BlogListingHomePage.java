@@ -11,15 +11,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
-import org.apache.sling.commons.json.JSONObject;
 import org.osgi.service.component.annotations.Component;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 @Component(service = Servlet.class, name="Blog Listing Servlet for Home Page", property = {
         "sling.servlet.resourceTypes=" + "blogproject/components/page",

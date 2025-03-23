@@ -1,5 +1,6 @@
 package com.blogproject.core.models.Impl;
 
+import com.blogproject.core.Utils.Utils;
 import com.blogproject.core.models.Blogs;
 import com.blogproject.core.models.ListOfBlogsModel;
 import com.day.cq.wcm.api.Page;
@@ -9,13 +10,10 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-
-
 import javax.annotation.PostConstruct;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +21,8 @@ import org.slf4j.LoggerFactory;
 @Model(adaptables = SlingHttpServletRequest.class, adapters = ListOfBlogsModel.class,defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ListOfBlogsModelImpl implements ListOfBlogsModel {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ListOfBlogsModelImpl.class);
+    @Self
+    private SlingHttpServletRequest request;
 
     @ValueMapValue
     private String parentPath;
@@ -38,9 +37,6 @@ public class ListOfBlogsModelImpl implements ListOfBlogsModel {
     protected void init() {
         blogList = new ArrayList<>();
 
-        LOG.info("Initializing ListOfBlogsModelImpl");
-        LOG.info("Parent Path: {}", parentPath);
-
 
         Resource resource = resourceResolver.getResource(parentPath);
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
@@ -52,8 +48,8 @@ public class ListOfBlogsModelImpl implements ListOfBlogsModel {
                     String title = childPage.getTitle().isEmpty() ?"Default Title":childPage.getTitle();
                     String path = childPage.getPath().isEmpty()?"Default Path":childPage.getPath()+".html";
                     Calendar date = childPage.getProperties().get("jcr:created", Calendar.class) ;
-                    String formattedDate = formatDate(date).isEmpty()?"Default Date":formatDate(date);
-                    String photo = getThumbnail(childPage.getPath()).isEmpty()?"Default Photo":getThumbnail(childPage.getPath());
+                    String formattedDate = Utils.formatDate(childPage);
+                    String photo = Utils.getThumbnailPath(request,childPage);
                     String desc = childPage.getDescription().isEmpty()?"Default Description":childPage.getDescription();
                     //Create a Blog Object
                     Blogs blog = new Blogs(
@@ -66,22 +62,6 @@ public class ListOfBlogsModelImpl implements ListOfBlogsModel {
                     blogList.add(blog);
                 }
         }
-    }
-    public String formatDate(Calendar date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("MMMM yyyy",Locale.ENGLISH);
-        return formatter.format(date.getTime()) ;
-    }
-    public String getThumbnail(String pagePath){
-        String ImagePath = pagePath + "/jcr:content/root/responsivegrid_291805153/banner";
-        Resource bannerNode = resourceResolver.getResource(ImagePath);
-
-        String ImageLink = "";
-        try{
-            ImageLink = bannerNode.getValueMap().get("bannerImage",String.class);
-        } catch (Exception e) {
-            return "Default Image Link";
-        }
-        return ImageLink;
     }
     @Override
     public List<Blogs> getBlogList() {

@@ -1,5 +1,6 @@
 package com.blogproject.core.models.Impl;
 
+import com.blogproject.core.Utils.Utils;
 import com.blogproject.core.models.Blogs;
 import com.blogproject.core.models.PublishBlogModel;
 import com.blogproject.core.service.PublishBlogService;
@@ -52,9 +53,8 @@ public class PublishBlogModelImpl implements PublishBlogModel {
                     String title = childPage.getTitle() == null ?"Default Title":childPage.getTitle();
                     String path = childPage.getPath() == null ?"Default Path":childPage.getPath()+".html";
                     String description = childPage.getDescription() == null ?"Default Description":childPage.getDescription();
-                    Calendar date = childPage.getProperties().get("jcr:created", Calendar.class) == null ? Calendar.getInstance() : childPage.getProperties().get("jcr:created", Calendar.class);
-                    String formattedDate = formatDate(date) == null ?"Default Date":formatDate(date);
-                    String photo = getImage(resolver,childPage.getPath()).isEmpty() ? "Default Photo":getImage(resolver,childPage.getPath());
+                    String formattedDate = Utils.formatDate(childPage);
+                    String photo = Utils.getThumbnailPath(request,childPage);
 
                     Blogs blog = new Blogs(title, path, formattedDate, photo, description);
                     blogList.add(blog);
@@ -73,18 +73,6 @@ public class PublishBlogModelImpl implements PublishBlogModel {
             }
         }
         return blogList;
-    }
-
-    public String formatDate(Calendar date){
-        SimpleDateFormat formatter = new SimpleDateFormat("MMMM yyyy",Locale.ENGLISH);
-        return formatter.format(date.getTime());
-    }
-    public String getImage(ResourceResolver resolver, String path){
-        String ImagePath = path + "/jcr:content/root/responsivegrid_291805153/banner";
-        Resource bannerNode = resolver.getResource(ImagePath);
-
-        String ImageLink = bannerNode.getValueMap().get("bannerImage", String.class);
-        return ImageLink;
     }
     @Override
     public List<Blogs> getBlogList() {
