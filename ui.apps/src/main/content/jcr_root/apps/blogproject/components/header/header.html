@@ -8,18 +8,14 @@
         <h2>${model.logoText}</h2>
     </div>
     <div class="menu"><span>&#9776;</span></div>
-
-    <div data-sly-test="${!model.navItems.isEmpty}">
+    <div data-sly-test="${model.navItems}">
         <ul class="navbar" data-sly-list.navItem="${model.navItems}">
-            <sly data-sly-test="${navItem.hideNavProperty=='Default'}">
-                <li><a href="${navItem.link @ context='uri'}" >${navItem.title}</a></li>
-            </sly>
+            <li><a href="${navItem.link @ context='uri'}" >${navItem.title}</a></li>
         </ul>
     </div>
-
-    <div data-sly-test="${model.navItems.isEmpty}">
-        <p>No navigation items available.</p>
+    <div data-sly-test="${!model.navItems}">
+        <p>navItems is Empty</p>
     </div>
-
-
+    <div>Resource-> ${model.resource}</div>
+    <div>Page -> ${model.page}</div>
 </header>

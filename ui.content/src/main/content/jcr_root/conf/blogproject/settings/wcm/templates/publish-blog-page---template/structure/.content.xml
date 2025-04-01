@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2025-03-26T12:34:05.131+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/blogproject/settings/wcm/templates/publish-blog-page---template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="weretail/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <experiencefragment
+                jcr:created="{Date}2025-03-26T12:33:04.451+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-26T12:34:05.129+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/blogproject/us/en/site/header/master"
+                id="Blog Project Header - publish blog page Template"/>
+            <responsivegrid
+                jcr:created="{Date}2025-03-17T12:01:37.977+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-17T12:01:37.977+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <footer
+                jcr:created="{Date}2025-03-16T19:41:39.854+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-18T12:02:10.017+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/footer"
+                navLink="[/content/blogproject/us/en/home-page,/content/blogproject/us/en/published-blog-page]"
+                navTitle="[Home,Published Blogs]"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

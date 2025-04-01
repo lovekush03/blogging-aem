@@ -38,18 +38,20 @@ public class BlogHeadingModelImpl implements BlogHeadingModel {
     private String getLoggedInUserName() {
         ResourceResolver resolver = request.getResourceResolver();
         try{
-            Session session = resolver.adaptTo(Session.class);
-            if(session != null) {
-                String userId = session.getUserID();
-                UserPropertiesManager upm = resolver.adaptTo(UserPropertiesManager.class);
-                if(upm != null) {
-                    UserProperties userProperties = upm.getUserProperties(userId, UserPropertiesService.PROFILE_PATH);
-                    if(userProperties != null) {
-                        String fullName = userProperties.getProperty("profile/fullName");
-                        return fullName != null ? fullName : userId;
-                    }
-                }
-            }
+//            Session session = resolver.adaptTo(Session.class);
+//            if(session != null) {
+//                String userId = session.getUserID();
+//                UserPropertiesManager upm = resolver.adaptTo(UserPropertiesManager.class);
+//                if(upm != null) {
+//                    UserProperties userProperties = upm.getUserProperties(userId, UserPropertiesService.PROFILE_PATH);
+//                    if(userProperties != null) {
+//                        String fullName = userProperties.getProperty("profile/fullName");
+//                        return fullName != null ? fullName : userId;
+//                    }
+//                }
+
+            //}
+
         } catch (Exception e) {
             e.printStackTrace();
         }

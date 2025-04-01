@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2025-03-23T13:42:44.202+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/blogproject/settings/wcm/templates/blog-page-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="weretail/components/structure/page">
+        <root
+            jcr:lastModified="{Date}2025-03-15T19:14:35.004+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
+                jcr:created="{Date}2025-03-15T19:21:04.923+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-18T12:03:59.068+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/header"
+                logoImage="/content/dam/blogproject/logo1.jpg"
+                logoText="Bootcamp Blogs"
+                navLink="[/content/blogproject/us/en/home-page,/content/blogproject/us/en/published-blog-page]"
+                navTitle="[Home,Published Blogs]"/>
+            <responsivegrid_291805153
+                jcr:created="{Date}2025-03-16T11:58:13.894+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-23T13:26:14.690+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true"/>
+            <responsivegrid
+                jcr:created="{Date}2025-03-16T11:46:30.684+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-16T11:46:30.684+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="8"/>
+                </cq:responsive>
+            </responsivegrid>
+            <responsivegrid_1571607282
+                jcr:created="{Date}2025-03-16T11:49:40.106+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-16T11:51:11.721+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </responsivegrid_1571607282>
+            <responsivegrid_593506493
+                jcr:created="{Date}2025-03-16T11:52:45.725+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-19T09:58:07.453+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="8"/>
+                </cq:responsive>
+            </responsivegrid_593506493>
+            <responsivegrid_1655149799
+                jcr:created="{Date}2025-03-19T10:53:23.164+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-19T10:53:23.164+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="4"/>
+                </cq:responsive>
+            </responsivegrid_1655149799>
+            <footer
+                jcr:created="{Date}2025-03-16T11:34:14.111+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-18T12:04:35.371+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/footer"
+                navLink="[/content/blogproject/us/en/home-page,/content/blogproject/us/en/published-blog-page]"
+                navTitle="[Home,Published Blogs]"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

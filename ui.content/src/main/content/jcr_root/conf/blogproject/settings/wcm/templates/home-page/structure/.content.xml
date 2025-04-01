@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2025-03-25T16:43:22.603+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/blogproject/settings/wcm/templates/home-page"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="weretail/components/structure/page">
+        <root
+            jcr:lastModified="{Date}2025-03-03T17:09:52.496+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <header
+                jcr:created="{Date}2025-03-24T17:07:45.892+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-24T17:08:39.134+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/header"
+                logoImage="/content/dam/blogproject/logo1.jpg"
+                logoText="Bootcamp Blogs">
+                <actions jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        navLink="/content/blogproject/us/en/home-page"
+                        navTitle="Home"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        navLink="/content/blogproject/us/en/published-blog-page"
+                        navTitle="Published Blogs"/>
+                </actions>
+            </header>
+            <experiencefragment
+                jcr:created="{Date}2025-03-25T16:42:54.940+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-25T16:43:22.600+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/blogproject/us/en/site/header/master"
+                id="Blog Project Header"/>
+            <responsivegrid
+                jcr:created="{Date}2025-03-17T11:25:55.481+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-17T11:25:55.481+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+                <carousel
+                    jcr:created="{Date}2025-03-21T11:39:01.898+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2025-03-21T11:39:01.898+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="blogproject/components/carousel"/>
+            </responsivegrid>
+            <responsivegrid_506012523
+                jcr:created="{Date}2025-03-17T11:37:44.316+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-17T14:38:17.103+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true"/>
+            <footer
+                jcr:created="{Date}2025-03-13T14:19:22.511+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-03-18T11:58:16.664+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="blogproject/components/footer"
+                navLink="[/content/blogproject/us/en/home-page,/content/blogproject/us/en/published-blog-page]"
+                navTitle="[Home,Published Blogs]"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

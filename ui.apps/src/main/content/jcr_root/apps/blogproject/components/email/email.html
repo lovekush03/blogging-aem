@@ -1,0 +1,11 @@
+<sly data-sly-use.model="com.blogproject.core.models.EmailModel"/>
+<div>This is the Email Component</div>
+<!--<div>Service Number = ${model.serviceNumber}</div>-->
+<!--<div>Service Name = ${model.serviceName}</div>-->
+<!--<div>Service URL = ${model.serviceURL}</div>-->
+
+<div data-sly-list.config="${model.practiceFactoryConfigs}">
+    <div><p>Service Number = ${config.serviceNumber}</p></div>
+    <div><p>Service Name = ${config.serviceName}</p></div>
+    <div><p>Service URL = ${config.serviceURL}</p></div>
+</div>

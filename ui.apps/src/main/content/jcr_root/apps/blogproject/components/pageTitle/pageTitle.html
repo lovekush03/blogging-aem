@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.blogproject.core.models.PageTitleModel"/>
+<ul data-sly-list="${model.pageTitles}">
+    <li>
+        <p>Output of getTitle : ${item.getTitle}</p>
+        <p>Output of getPageTitle : ${item.getPageTitle}</p>
+        <p>Link to the Page : ${item.link}</p>
+    </li>
+</ul>

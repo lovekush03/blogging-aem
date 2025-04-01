@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2025-03-26T17:27:41.789+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/blogproject/settings/wcm/template-types/site-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Practice Site Page"
+        status="enabled"/>
+</jcr:root>
