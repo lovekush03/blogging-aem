@@ -47,7 +47,7 @@ public class BlogListingHomePage extends SlingSafeMethodsServlet {
 
         if(currentPage == null){
             resp.setContentType("application/json");
-            resp.getWriter().write("{\"message\" : \" Could not find a Vlid AEM Page\"");
+            resp.getWriter().write("{\"message\" : \" Could not find a Valid AEM Page\"");
         }
 
         //Create JSON Array for Child Pages

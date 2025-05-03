@@ -1,4 +1,4 @@
-package com.blogproject.core.models.impl;
+package com.blogproject.core.models.Impl;
 
 import com.blogproject.core.Utils.Utils;
 import com.blogproject.core.models.ListingModel;

@@ -12,7 +12,7 @@ import java.util.Locale;
 
 public class Utils {
     public static String getThumbnailPath(SlingHttpServletRequest request, Page page) {
-        String ImagePath = page.getPath() + "/jcr:content/cq:featuredimage/file/jcr:content";
+        String ImagePath = page.getPath() + "/jcr:content/image/file/jcr:content";
         ResourceResolver resolver = request.getResourceResolver();
         Resource ImageNode = resolver.getResource(ImagePath);
         String ImageLink = "";

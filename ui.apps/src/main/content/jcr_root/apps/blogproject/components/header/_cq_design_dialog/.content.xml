@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+           jcr:title="Header">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items
+            jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items
+                        jcr:primaryType="nt:unstructured">
+                    <box1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            text="Disable Logo Image"
+                            fieldDescription="Check to make Logo Image Unauthorable on Page"
+                            name="./logoImageDisabled"
+                            value="true"
+                            uncheckedValue="false"
+                            checked="{Boolean}false">
+                    </box1>
+                    <box2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            text="Disable Logo Text"
+                            fieldDescription="Check to make Logo Text Unauthorable on Page"
+                            name="./logoTextDisabled"
+                            value="true"
+                            uncheckedValue="false"
+                            checked="{Boolean}false">
+                    </box2>
+                    <box3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            text="Disable NavItems"
+                            fieldDescription="Check to make NavItems Unauthorable on Page"
+                            name="./navItemsDisabled"
+                            value="true"
+                            uncheckedValue="false"
+                            checked="{Boolean}false">
+                    </box3>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

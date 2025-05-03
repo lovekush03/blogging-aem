@@ -1,39 +1,37 @@
 package com.blogproject.core.models.Impl;
-
 import com.blogproject.core.models.HeaderModel;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.Self;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.models.annotations.*;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.*;
 
-@Model(adaptables = SlingHttpServletRequest.class, adapters = HeaderModel.class, defaultInjectionStrategy= DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = SlingHttpServletRequest.class,
+        adapters = HeaderModel.class,
+        resourceType = "blogproject/components/header",
+        defaultInjectionStrategy= DefaultInjectionStrategy.OPTIONAL)
+@Exporter(name="jackson" ,extensions = "json")
 public class HeaderModelImpl implements HeaderModel {
-    @Self
+    @Inject
     private SlingHttpServletRequest request;
 
-    @ValueMapValue
-    @Default(values = "Default Title")
+    @Inject
+    @Via("resource")
+    @Default(values = "Default Text")
     private String logoText;
 
-    @ValueMapValue
+    @Inject
+    @Via("resource")
     @Default(values = "Default Image")
     private String logoImage;
 
-
-
-    @ScriptVariable
+    @Inject
     private Resource resource;
 
-    @ScriptVariable
+    @Inject
     private Page currentPage;
 
     private List<Map<String,String>> navItems;
@@ -56,7 +54,7 @@ public class HeaderModelImpl implements HeaderModel {
         //resource using sling object annotation .path -> /conf/blogproject/settings/wcm/templates/home-page/structure/jcr:content/root/header
         //resource using script variable annotation -> same as above
 
-        navItems = new ArrayList<Map<String,String>>();
+        navItems = new ArrayList<>();
         Resource actionNode = resource.getChild("actions");
         if (actionNode != null) {
             //get Child node of the actionNode -> all
@@ -79,12 +77,5 @@ public class HeaderModelImpl implements HeaderModel {
     public List<Map<String, String>> getNavItems() {
         return navItems;
     }
-    @Override
-    public String getPage() {
-        return currentPage.getPath();
-    }
-    @Override
-    public String getResource() {
-        return resource.getPath();
-    }
+
 }

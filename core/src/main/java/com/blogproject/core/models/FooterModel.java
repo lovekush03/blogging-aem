@@ -1,7 +1,8 @@
 package com.blogproject.core.models;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FooterModel {
-    List<NavItems> getNavItems();
+    List<Map<String,String>> getNavItems();
 }
